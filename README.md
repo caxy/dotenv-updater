@@ -14,16 +14,55 @@ line, and update your `.env` file for you.
 
 ```bash
 # with npm
-npm install dotenv-updater
+npm install --save-dev dotenv-updater
 
 # or with Yarn
-yarn add dotenv-updater
+yarn add --dev dotenv-updater
 ```
 
 ## Usage
 
-You can run it manually from the command line.
+The primary use-case is to run this script alongside your other npm/Yarn scripts defined in your `package.json`.
+
+For example, you can add calls to `dotenv-updater` at the beginning of your commonly run scripts,
+so that you can ensure you'll always have an up-to-date env file. 
+
+```json
+# in your package.json
+
+"scripts": {
+  # ...
+  "update-env": "dotenv-updater",
+  "start": "dotenv-updater && node dist/index.js",
+  "build": "dotenv-updater && npm run clean && ...",
+  # ...
+},
+...
+```
+
+You could also add it as a separate script that you could run manually at any time.
+
+```json
+# in your package.json
+
+"scripts": {
+  "update-env": "dotenv-updater",
+  # ...
+}
+```
+
+Then to run it:
 
 ```bash
-yarn run dotenv-updater
+# with npm
+npm run update-env
+
+# or with Yarn
+yarn run update-env
+```
+
+You could also run it manually from the command line if you installed it globally:
+
+```bash
+dotenv-updater
 ``` 
