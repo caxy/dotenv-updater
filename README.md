@@ -14,10 +14,10 @@ line, and update your `.env` file for you.
 
 ```bash
 # with npm
-npm install --save-dev dotenv-updater
+npm install --save-dev @caxy/dotenv-updater
 
 # or with Yarn
-yarn add --dev dotenv-updater
+yarn add --dev @caxy/dotenv-updater
 ```
 
 ## Usage
