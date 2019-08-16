@@ -24,7 +24,8 @@
   "files": [
     "index.js",
     "dotenvUpdater.js",
-    "yarn.lock"
+    "LICENSE",
+    "README.md"
   ],
   "bin": {
     "dotenv-updater": "./index.js"
