@@ -1,3 +1,6 @@
+![npm (scoped)](https://img.shields.io/npm/v/@caxy/dotenv-updater?style=flat-square)
+![npm](https://img.shields.io/npm/dm/@caxy/dotenv-updater?style=flat-square)
+
 # Dotenv Updater
 
 Dotenv Updater is a module that keeps your local, gitignored, `.env` files up to date with the latest 
