@@ -1,0 +1,37 @@
+{
+  "name": "@caxy/dotenv-updater",
+  "version": "1.0.0",
+  "keywords": [
+    "dotenv",
+    ".env",
+    "environment variables",
+    "update .env",
+    "prompt"
+  ],
+  "description": "Keep your gitignored local .env file up to date with the dist file.",
+  "author": "Caxy <dev@caxy.com> (https://www.caxy.com)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caxy/dotenv-updater.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=8"
+  },
+  "bugs": {
+    "url": "https://github.com/caxy/dotenv-updater/issues"
+  },
+  "files": [
+    "index.js",
+    "dotenvUpdater.js",
+    "yarn.lock"
+  ],
+  "bin": {
+    "dotenv-updater": "./index.js"
+  },
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "fs-extra": "^8.1.0",
+    "inquirer": "^6.5.1"
+  }
+}
