@@ -1,5 +1,5 @@
-![npm (scoped)](https://img.shields.io/npm/v/@caxy/dotenv-updater?style=flat-square)
-![npm](https://img.shields.io/npm/dm/@caxy/dotenv-updater?style=flat-square)
+[![npm (scoped)](https://img.shields.io/npm/v/@caxy/dotenv-updater?style=flat-square)](https://www.npmjs.com/package/@caxy/dotenv-updater)
+[![npm](https://img.shields.io/npm/dm/@caxy/dotenv-updater?style=flat-square)](https://www.npmjs.com/package/@caxy/dotenv-updater)
 
 # Dotenv Updater
 
