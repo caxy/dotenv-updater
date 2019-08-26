@@ -35,7 +35,14 @@ try {
   throw error;
 }
 
-const config = Object.assign({}, defaultConfig, fileJson.dotenvUpdater || {});
+// Get command line arguments that may override config.
+const configArgs = {};
+const [envFileArg] = process.argv.slice(2);
+if (envFileArg) {
+  configArgs.envFile = envFileArg;
+}
+
+const config = Object.assign({}, defaultConfig, fileJson.dotenvUpdater || {}, envFileArg);
 
 const sourceFile = path.resolve(process.cwd(), config.envFile)
 const distFile = path.resolve(process.cwd(), config.distFile)
