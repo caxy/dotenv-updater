@@ -42,7 +42,7 @@ if (envFileArg) {
   configArgs.envFile = envFileArg;
 }
 
-const config = Object.assign({}, defaultConfig, fileJson.dotenvUpdater || {}, envFileArg);
+const config = Object.assign({}, defaultConfig, fileJson.dotenvUpdater || {}, configArgs);
 
 const sourceFile = path.resolve(process.cwd(), config.envFile)
 const distFile = path.resolve(process.cwd(), config.distFile)
