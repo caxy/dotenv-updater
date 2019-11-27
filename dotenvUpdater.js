@@ -12,6 +12,7 @@ const defaultConfig = {
   envFile: DEFAULT_SOURCE_FILENAME,
   distFile: DEFAULT_DIST_FILENAME,
   checkExtraVars: true,
+  skipPrompts: false,
 };
 
 // Try to load package.json file of project this is being run from to look for configuration settings.
@@ -37,9 +38,13 @@ try {
 
 // Get command line arguments that may override config.
 const configArgs = {};
-const [envFileArg] = process.argv.slice(2);
+const [envFileArg, skipPrompts] = process.argv.slice(2)
 if (envFileArg) {
-  configArgs.envFile = envFileArg;
+  configArgs.envFile = envFileArg
+}
+
+if (skipPrompts && skipPrompts !== 'false') {
+  configArgs.skipPrompts = true
 }
 
 const config = Object.assign({}, defaultConfig, fileJson.dotenvUpdater || {}, configArgs);
@@ -134,9 +139,12 @@ async function execute () {
 
     if (missingKeys.length > 0) {
       console.log('.env file is missing the following variables:', missingKeys)
-      console.log('Let\'s add these variables now! Enter values or hit enter to accept the defaults.')
 
-      const answers = await promptForKeyValues(missingKeys, dist)
+      let answers = dist;
+      if (!config.skipPrompts) {
+        console.log('Let\'s add these variables now! Enter values or hit enter to accept the defaults.')
+        answers = await promptForKeyValues(missingKeys, dist)
+      }
 
       let envString = ''
       for (const [key, value] of Object.entries(answers)) {
