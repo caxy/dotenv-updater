@@ -140,7 +140,11 @@ async function execute () {
     if (missingKeys.length > 0) {
       console.log('.env file is missing the following variables:', missingKeys)
 
-      let answers = dist;
+      let answers = missingKeys.reduce((result, key) => {
+        result[key] = dist[key] || null
+        return result
+      }, {});
+
       if (!config.skipPrompts) {
         console.log('Let\'s add these variables now! Enter values or hit enter to accept the defaults.')
         answers = await promptForKeyValues(missingKeys, dist)
