@@ -47,6 +47,11 @@ if (skipPrompts && skipPrompts !== 'false') {
   configArgs.skipPrompts = true
 }
 
+// If an environment variable CI exists and evaluates to true, skip prompts.
+if (!skipPrompts && (!!process.env.CI || !!process.env.ci)) {
+  configArgs.skipPrompts = true
+}
+
 const config = Object.assign({}, defaultConfig, fileJson.dotenvUpdater || {}, configArgs);
 
 const sourceFile = path.resolve(process.cwd(), config.envFile)
