@@ -1,6 +1,6 @@
 {
   "name": "@caxy/dotenv-updater",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "keywords": [
     "dotenv",
     ".env",
@@ -34,6 +34,6 @@
   "dependencies": {
     "dotenv": "^8.0.0",
     "fs-extra": "^8.1.0",
-    "inquirer": "^6.5.1"
+    "inquirer": "^8.2.7"
   }
 }
